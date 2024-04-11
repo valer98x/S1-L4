@@ -1,0 +1,13 @@
+Nell'esercizio, abbiamo anzitutto collegato tra loro due dispositivi host (un laptop e un PC) tra loro su una stessa sottorete ( uno con IP 192.168.100.100 e l'altro con IP 192.168.100.103) attraverso uno switch. Per verificare l'effettiva comunicazione tra i due dispositivi è stato effettuato un ping attraverso il prompt dei comandi. In questo caso , visto che il laptop e il PC si trovano sulla stessa sottorete, una volta che il laptop ha inviato il pacchetto di dati allo switch, questo riconosce di doverlo inviare ad un dispositivo della stessa rete grazie alla sua tabella MAC.
+
+Successivamente, è stata creata una seconda sottorete con un altro PC ( con IP 192.168.100.105) ed un laptop (con IP 192.168.200.100); si cercherà di mettere in contatto il laptop della rete 1 con il laptop della rete 2 .
+
+Gli switch appartenenti ad entrambe le sottoreti sono stati collegati ad un router . Successivamente è stato confugurato il router con due interfacce differenti, ognune delle quali riportava come indirizzo IP, lo stesso indirizzo che abbiamo impostato come Gateway sul laptop della rete 1 e sul laptop della rete 2 (nel primo caso 192.168.100.1, nel secondo caso IP 192.168.200.1) in modo da permettere ai due laptop di connettersi.
+
+Per verificare che il laptop della rete 1 e il laptop della rete 2 potessero dialogare tra loro anche al di fuori della sotto-rete è stato inviato un ping dal laptop della rete 1 al laptop della rete 2. In questo secondo caso, lo switch ha inoltrato la richiesta al router, che ha inviato il pacchetto di dati verso la rete. i dati vengono scompattati per viaggiare più velocemente (fase 4 del modello ISO/OSI) e saranno riassemblati prima di raggiungere il laptop 2.
+
+Generalmente, quando tentiamo di mettere in contatto due Host appartenti a reti differenti (secondo il modello ISO/OSI) possiamo trovarci di fronte a due protocolli :TCP o UDP, che regolano lo scambio di pacchetti. In questo caso abbiamo una simulazione della "cosiddetta stretta di mano a 3 vie"(tipica del protocollo TCP), cioè avviene che la richesta(syn) da parte del laptop 1 trova una risposta (syn/ack) da parte del laptop 2 ed infine, abbiamo la conclusiva chiusura del dialogo da parte del laptop 1 tramite un pacchetto ACK).
+
+
+
+
